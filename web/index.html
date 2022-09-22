@@ -6,9 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <meta name="theme-color" content="#2d2138" />
+    <meta name="msapplication-TileColor" content="#2d2138" />
+    <meta name="msapplication-TileImage" content="/imagen/icons/icon-144x144.png" />
+    <meta name="mobile-web-app-capable " content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="DecomRradio" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="DecomRradio" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="manifest" href="manifest.json" />
+    
 </head>
 
 <body>
+
+    <div class="button">
+        <a class="urlserv button ui" href="javascript:void(0);"
+            title="Instalar" id="btnAddToHomeScreen"> Instalar Atalho</a> 
+    </div>
+
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js', {
+                scope: '/'
+            })
+                .then(function (registration) {
+                    console.log('Service Worker Registered');
+                });
+            navigator.serviceWorker.ready.then(function (registration) {
+                console.log('Service Worker Ready');
+            });
+        }
+        var deferredPrompt;
+        window.addEventListener('beforeinstallprompt', function (e) {
+            console.log('beforeinstallprompt Event fired');
+            //e.preventDefault();
+            deferredPrompt = e;
+            return false;
+        });
+        btnAddToHomeScreen.addEventListener('click', function () {
+            if (deferredPrompt !== undefined) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then(function (choiceResult) {
+                    console.log(choiceResult.outcome);
+                    if (choiceResult.outcome == 'dismissed') {
+                        console.log('User cancelled home screen install');
+                    } else {
+                        console.log('User added to home screen');
+                    }
+                    deferredPrompt = null;
+                });
+            }
+        });
+    </script>
 
 </body>
 
