@@ -10,6 +10,16 @@
     "orientation": "portrait",
     "theme_color": "#0c0d17",
     "background_color": "#ffffff",
+    "protocol_handlers": [
+      {
+        "protocol": "web+jngl",
+        "url": "./lookup?type=%s"
+      },
+      {
+        "protocol": "web+jnglstore",
+        "url": "./shop?for=%s"
+      }
+    ],
     "icons": [
       {
         "src": "./icon/36.png",
