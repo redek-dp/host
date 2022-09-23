@@ -12,12 +12,12 @@
     "background_color": "#ffffff",
     "protocol_handlers": [
       {
-        "protocol": "https",
-        "url": "redek-dp.github.io/host/web/"
+        "protocol": "web+jngl",
+        "url": "lookup?type=%s"
       },
       {
         "protocol": "web+jnglstore",
-        "url": "./shop?for=%s"
+        "url": "shop?for=%s"
       }
     ],
     "icons": [
