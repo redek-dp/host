@@ -29,8 +29,8 @@
 
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/host/web/sw.js', {
-                scope: '/host/web'
+            navigator.serviceWorker.register('./sw.js', {
+                scope: './'
             })
                 .then(function (registration) {
                     console.log('Service Worker Registered');
