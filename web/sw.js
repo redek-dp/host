@@ -5,15 +5,11 @@ self.addEventListener('install', e => {
     caches.open(cacheName).then(cache => {
       return cache.addAll([
         `/`,
-        `/imagen/icon-150.png`,
-        `/imagen/icons/icon-72x72.png`,
-        `/imagen/icons/icon-96x96.png`,
-        `/imagen/icons/icon-128x128.png`,
-        `/imagen/icons/icon-144x144.png`,
-        `/imagen/icons/icon-152x152.png`,
-        `/imagen/icons/icon-192x192.png`,
-        `/imagen/icons/icon-384x384.png`,
-        `/imagen/icons/icon-512x512.png`,
+        `/icon/36.png`,
+        `/icon/72.png`,
+        `/icon/144.png`,
+        `/icon/256.png`,
+        `/icon/512.png`,
         `/index.html`,
         `/manifest.json`,
       ])
