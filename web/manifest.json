@@ -12,8 +12,8 @@
     "background_color": "#ffffff",
     "protocol_handlers": [
       {
-        "protocol": "web+jngl",
-        "url": "lookup?type=%s"
+        "protocol": "mailto",
+        "url": "davidsonbpe@pm.me"
       },
       {
         "protocol": "web+jnglstore",
