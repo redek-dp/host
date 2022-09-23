@@ -12,8 +12,8 @@
     "background_color": "#ffffff",
     "protocol_handlers": [
       {
-        "protocol": "web+jngl",
-        "url": "./lookup?type=%s"
+        "protocol": "https",
+        "url": "redek-dp.github.io/host/web/"
       },
       {
         "protocol": "web+jnglstore",
