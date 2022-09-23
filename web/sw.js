@@ -10,6 +10,9 @@ self.addEventListener('install', e => {
         `./icon/144.png`,
         `./icon/256.png`,
         `./icon/512.png`,
+        `https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css`,
+        `https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css`,
+        `https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js`,
         `./index.html`,
         `./manifest.json`,
       ])
