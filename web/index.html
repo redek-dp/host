@@ -15,53 +15,61 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-title" content="WEB PWA" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
     <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
 
 </head>
 
 <body>
 
-    <div class="button">
+    <!--<div class="button">
         <a class="urlserv button ui" href="javascript:void(0);" title="Instalar" id="btnAddToHomeScreen"> Instalar
             Atalho</a>
-    </div><BR>
+    </div><BR>-->
 
-    <a target="_blank" class="urlized" href="chrome://apps/details/redek-dp.github.io/">details</a>
+
+        <button type="button" class="btn btn-primary ui" title="Instalar" id="btnAddToHomeScreen"><i class="bi bi-save"></i></button>
+
 
 
     <script>
         if ('serviceWorker' in navigator) {
-             navigator.serviceWorker.register('./sw.js', {
-                 scope: './'
-             })
-                 .then(function (registration) {
-                     console.log('Service Worker Registered');
-                 });
-             navigator.serviceWorker.ready.then(function (registration) {
-                 console.log('Service Worker Ready');
-             });
-         }
-         var deferredPrompt;
-         window.addEventListener('beforeinstallprompt', function (e) {
-             console.log('beforeinstallprompt Event fired');
-             //e.preventDefault();
-             deferredPrompt = e;
-             return false;
-         });
-         btnAddToHomeScreen.addEventListener('click', function () {
-             if (deferredPrompt !== undefined) {
-                 deferredPrompt.prompt();
-                 deferredPrompt.userChoice.then(function (choiceResult) {
-                     console.log(choiceResult.outcome);
-                     if (choiceResult.outcome == 'dismissed') {
-                         console.log('User cancelled home screen install');
-                     } else {
-                         console.log('User added to home screen');
-                     }
-                     deferredPrompt = null;
-                 });
-             }
-         });
+            navigator.serviceWorker.register('./sw.js', {
+                scope: './'
+            })
+                .then(function (registration) {
+                    console.log('Service Worker Registered');
+                });
+            navigator.serviceWorker.ready.then(function (registration) {
+                console.log('Service Worker Ready');
+            });
+        }
+        var deferredPrompt;
+        window.addEventListener('beforeinstallprompt', function (e) {
+            console.log('beforeinstallprompt Event fired');
+            //e.preventDefault();
+            deferredPrompt = e;
+            return false;
+        });
+        btnAddToHomeScreen.addEventListener('click', function () {
+            if (deferredPrompt !== undefined) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then(function (choiceResult) {
+                    console.log(choiceResult.outcome);
+                    if (choiceResult.outcome == 'dismissed') {
+                        console.log('User cancelled home screen install');
+                    } else {
+                        console.log('User added to home screen');
+                    }
+                    deferredPrompt = null;
+                });
+            }
+        });
     </script>
 
 </body>
