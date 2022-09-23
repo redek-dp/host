@@ -16,8 +16,8 @@
         "url": "redek-dp.github.io/host/web/"
       },
       {
-        "protocol": "edge",
-        "url": "apps/details/redek-dp.github.io/x"
+        "protocol": "web+jnglstore",
+        "url": "./shop?for=%s"
       }
     ],
     "icons": [
