@@ -4,14 +4,14 @@ self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(cacheName).then(cache => {
       return cache.addAll([
-        `/`,
-        `/icon/36.png`,
-        `/icon/72.png`,
-        `/icon/144.png`,
-        `/icon/256.png`,
-        `/icon/512.png`,
-        `/index.html`,
-        `/manifest.json`,
+        `./`,
+        `./icon/36.png`,
+        `./icon/72.png`,
+        `./icon/144.png`,
+        `./icon/256.png`,
+        `./icon/512.png`,
+        `./index.html`,
+        `./manifest.json`,
       ])
           .then(() => self.skipWaiting());
     })
