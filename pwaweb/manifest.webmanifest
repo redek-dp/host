@@ -1,15 +1,50 @@
 {
-  "background_color": "purple",
-  "description": "Shows random fox pictures. Hey, at least it isn't cats.",
-  "display": "fullscreen",
-  "icons": [
+  "name": "pwaweb",
+  "short_name": "pwaweb",
+  "description": "pwaweb computador, Tablets e Smartphone.",
+  "lang": "pt-BR",
+  "start_url": "/host/pwaweb/?pwaweb",
+  "id": "/host/pwaweb/?pwaweb",
+  "scope": "/host/pwaweb/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0c0d17",
+  "background_color": "#ffffff",
+  "protocol_handlers": [
     {
-      "src": "icon/fox-icon.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "protocol": "web+jngl",
+      "url": "lookup?type=%s"
+    },
+    {
+      "protocol": "web+jnglstore",
+      "url": "shop?for=%s"
     }
   ],
-  "name": "Awesome fox pictures",
-  "short_name": "Foxes",
-  "start_url": "/host/pwaweb/index.html"
+  "icons": [
+    {
+      "src": "icon/36.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
+    {
+      "src": "icon/72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "icon/144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "icon/256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icon/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
