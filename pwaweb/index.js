@@ -4,7 +4,7 @@
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/pwa-examples/a2hs/sw.js')
+    .register('/host/pwaweb/sw.js')
     .then(() => { console.log('Service Worker Registered'); });
 }
 
