@@ -1,9 +1,9 @@
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open('fox-kop').then((cache) => cache.addAll([
-      '/pwa-examples/a2hs/',
-      '/pwa-examples/a2hs/index.html',
-      '/pwa-examples/a2hs/index.js',
+      '/host/pwaweb/',
+      '/host/pwaweb/index.html',
+      '/host/pwaweb/index.js',
     ])),
   );
 });
