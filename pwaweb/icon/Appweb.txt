@@ -1,0 +1,9 @@
+URL:microsoft-edge
+
+edge://apps/Appweb
+
+edge://apps/details/redek-dp.github.io/
+
+chrome://apps/details/redek-dp.github.io/
+
+web+jnglstore://shop?for=555
