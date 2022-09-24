@@ -22,27 +22,27 @@
   ],
   "icons": [
     {
-      "src": "host/pwaweb/icon/36.png",
+      "src": "icon/36.png",
       "sizes": "36x36",
       "type": "image/png"
     },
     {
-      "src": "host/pwaweb/icon/72.png",
+      "src": "icon/72.png",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "host/pwaweb/icon/144.png",
+      "src": "icon/144.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "host/pwaweb/icon/256.png",
+      "src": "icon/256.png",
       "sizes": "256x256",
       "type": "image/png"
     },
     {
-      "src": "host/pwaweb/icon/512.png",
+      "src": "icon/512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
