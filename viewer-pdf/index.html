@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>viewer pdf</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./d-framework/style.css" />
+
+</head>
+
+<body>
+
+    <main class="o-viewer">
+        <header class="o-viewer_header">
+            <div class="o-viewer_field" style="height: 100%">
+                <div class="o-viewer_header-controls" style="height: 100%">
+
+                    <button class="btn" id="prev"><i class="bi bi-arrow-left-circle"></i> Prev</button>
+                    <button class="btn" id="next">Next <i class="bi bi-arrow-right-circle"></i></button>
+
+                    <button class="btn" type="button" onclick="zoomin()"><i class="bi bi-zoom-in"></i></button>
+
+                    <button class="btn" type="button" onclick="zoomout()"><i class="bi bi-zoom-out"></i></button>
+
+                    <span class="btnklo">
+                        <span id="page_num"></span> /
+                        <span id="page_count"></span>
+                    </span>
+
+                </div>
+            </div>
+        </header>
+        <section class="o-viewer_canvasWrapper">
+            <article class="o-viewer_field" id="pdf-renderl" GFG="250">
+                <canvas id="the-canvas"></canvas>
+            </article>
+        </section>
+    </main>
+
+    <script src='https://mozilla.github.io/pdf.js/build/pdf.js'></script>
+    <script src="./d-framework/script.js"></script>
+
+</body>
+
+</html>
