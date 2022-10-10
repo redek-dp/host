@@ -10,6 +10,32 @@
   "orientation": "portrait",
   "theme_color": "#0c0d17",
   "background_color": "#ffffff",
+  "dir": "auto",
+  "display_override": [
+    "standalone"
+  ],
+  "categories": [
+    "books"
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://redek-dp.github.io/host/pwaweb/",
+      "id": "redek-dp.github.io/host/pwaweb"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Site WEb",
+      "url": "https://redek-dp.github.io/host/web/",
+      "icons": [
+        {
+          "src": "https://redek-dp.github.io/host/pwaweb/icon/512.png"
+        }
+      ],
+      "description": "Site WEb computador, Tablets e Smartphone."
+    }
+  ],
   "protocol_handlers": [
     {
       "protocol": "web+jngl",
