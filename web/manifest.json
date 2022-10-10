@@ -1,50 +1,76 @@
 {
-    "name": "Appweb",
-    "short_name": "appweb",
-    "description": "São seu computador, Tablets e Smartphone.",
-    "lang": "pt-BR",
-    "start_url": "./?aplicativo",
-    "id": "./?aplicativo",
-    "scope": "./",
-    "display": "standalone",
-    "orientation": "portrait",
-    "theme_color": "#0c0d17",
-    "background_color": "#ffffff",
-    "protocol_handlers": [
-      {
-        "protocol": "web+jngl",
-        "url": "lookup?type=%s"
-      },
-      {
-        "protocol": "web+jnglstore",
-        "url": "shop?for=%s"
-      }
-    ],
-    "icons": [
-      {
-        "src": "./icon/36.png",
-        "sizes": "36x36",
-        "type": "image/png"
-      },
-      {
-        "src": "./icon/72.png",
-        "sizes": "72x72",
-        "type": "image/png"
-      },
-      {
-        "src": "./icon/144.png",
-        "sizes": "144x144",
-        "type": "image/png"
-      },
-      {
-        "src": "./icon/256.png",
-        "sizes": "256x256",
-        "type": "image/png"
-      },
-      {
-        "src": "./icon/512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ]
-  }
+  "name": "Appweb",
+  "short_name": "appweb",
+  "description": "São seu computador, Tablets e Smartphone.",
+  "lang": "pt-BR",
+  "start_url": "./?aplicativo",
+  "id": "./?aplicativo",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0c0d17",
+  "background_color": "#ffffff",
+  "dir": "auto",
+  "display_override": [
+    "standalone"
+  ],
+  "categories": [
+    "books"
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://redek-dp.github.io/host/web/",
+      "id": "redek-dp.github.io/host/web"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "appweb",
+      "url": "https://redek-dp.github.io/host/web/",
+      "icons": [
+        {
+          "src": "https://redek-dp.github.io/host/web/icon/512.png"
+        }
+      ],
+      "description": "São seu computador, Tablets e Smartphone."
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+jngl",
+      "url": "lookup?type=%s"
+    },
+    {
+      "protocol": "web+jnglstore",
+      "url": "shop?for=%s"
+    }
+  ],
+  "icons": [
+    {
+      "src": "./icon/36.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon/72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon/144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon/256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
