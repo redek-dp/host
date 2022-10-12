@@ -21,16 +21,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
-        <script src="pxw.js" defer></script>
+    <script src="pxw.js" defer></script>
     <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
     <style>
-        .hfgh{
+        .hfgh {
             position: fixed;
             bottom: 20px;
             right: 20px;
         }
-
     </style>
+
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs"
+        data-app-key="t0ewwvchurlcssd"></script>
 
 </head>
 
@@ -42,11 +44,17 @@
     </div><BR>-->
 
 
-        <button type="button" class="btn btn-primary ui" title="Instalar" id="btnAddToHomeScreen" style="position: fixed; bottom: 20px; right: 20px;"><i class="bi bi-save"></i></button>
+    <button type="button" class="btn btn-primary ui" title="Instalar" id="btnAddToHomeScreen"
+        style="position: fixed; bottom: 20px; right: 20px;"><i class="bi bi-save"></i></button>
 
+
+        <button type="button" class="btn btn-primary" title="Instalar" id="button"
+        style="position: fixed; top: 20px; right: 20px;"><i class="bi bi-save"></i></button>
 
 
     <script>
+        var button = Dropbox.createChooseButton(options);
+        document.getElementById("container").appendChild(button);
         /*if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('./sw.js', {
                 scope: './'
