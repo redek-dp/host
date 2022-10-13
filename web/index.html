@@ -52,38 +52,42 @@
         style="position: fixed; top: 20px; right: 20px;"><i class="bi bi-save"></i></button>
 
 
+    <form>
+        <input type="file" name="file" accept="image/*" onchange="uploadFile">
+    </form>
+
+
     <script>
 
-        Dropbox.choose(options);
+        var xhr = new XMLHttpRequest();
 
-        var button = Dropbox.createChooseButton(options);
-        document.getElementById("container").appendChild(button);
-
-        options = {
-
-
-            success: function (files) {
-                alert("Here's the file link: " + files[0].link)
-            },
-
-            cancel: function () {
-
-            },
-
-            linkType: "preview", // or "direct"
-
-
-            multiselect: false, // or true
-
-            extensions: ['.pdf', '.doc', '.html', '.docx'],
-
-
-            folderselect: false, // or true
-
-
-            sizeLimit: 1024, // or any positive number
+        xhr.upload.onprogress = function (evt) {
+            var percentComplete = parseInt(100.0 * evt.loaded / evt.total);
+            // Upload in progress. Do something here with the percent complete.
         };
 
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                var fileInfo = JSON.parse(xhr.response);
+                // Upload succeeded. Do something here with the file info.
+            }
+            else {
+                var errorMessage = xhr.response || 'Unable to upload file';
+                // Upload failed. Do something here with the error.
+            }
+        };
+
+        xhr.open('POST', 'https://content.dropboxapi.com/2/files/upload');
+        xhr.setRequestHeader('Authorization', 'Bearer ' + dropboxToken);
+        xhr.setRequestHeader('Content-Type', 'application/octet-stream');
+        xhr.setRequestHeader('Dropbox-API-Arg', JSON.stringify({
+            path: '/' + file.name,
+            mode: 'add',
+            autorename: true,
+            mute: false
+        }));
+
+        xhr.send(file);
 
 
         /*if ('serviceWorker' in navigator) {
