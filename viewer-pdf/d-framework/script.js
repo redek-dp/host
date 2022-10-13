@@ -1,3 +1,4 @@
+document.write('<script async defer data-website-id="8b007554-18ab-4afb-8546-428aead9af80" src="https://devanalytics.vercel.app/umami.js"></script>');
 
 var url = 'https://dl.dropboxusercontent.com/s/154e4ct30xppkgy/MetodoTeoriaSolfejo.pdf';
 
@@ -8,12 +9,12 @@ var pdfjsLib = window['pdfjs-dist/build/pdf'];
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://redek-dp.github.io/host/viewer-pdf/d-framework/pdf.worker.js';
 
 var pdfDoc = null,
-    pageNum = 1,
-    pageRendering = false,
-    pageNumPending = null,
-    scale = 1.3,
-    canvas = document.getElementById('the-canvas'),
-    ctx = canvas.getContext('2d');
+  pageNum = 1,
+  pageRendering = false,
+  pageNumPending = null,
+  scale = 1.3,
+  canvas = document.getElementById('the-canvas'),
+  ctx = canvas.getContext('2d');
 var prevBtnElm = document.getElementById('prev');
 var nextBtnElm = document.getElementById('next');
 var pageCountElm = document.getElementById('page_count')
@@ -25,9 +26,9 @@ var pageCountElm = document.getElementById('page_count')
 function renderPage(num) {
   pageRendering = true;
   // Using promise to fetch the page
-  pdfDoc.getPage(num).then(function(page) {
-      console.log(page)
-    var viewport = page.getViewport({scale: scale});
+  pdfDoc.getPage(num).then(function (page) {
+    console.log(page)
+    var viewport = page.getViewport({ scale: scale });
     canvas.height = viewport.height;
     canvas.width = viewport.width;
 
@@ -39,7 +40,7 @@ function renderPage(num) {
     var renderTask = page.render(renderContext);
 
     // Wait for rendering to finish
-    renderTask.promise.then(function() {
+    renderTask.promise.then(function () {
       pageRendering = false;
       if (pageNumPending !== null) {
         // New page rendering is pending
@@ -80,75 +81,75 @@ prevBtnElm.addEventListener('click', onPrevPage);
 /**
  * Displays next page.
  */
-function onNextPage(){
-    if (pageNum >= pdfDoc.numPages) {
-        return;
-    }
-    pageNum++;
-    queueRenderPage(pageNum);
+function onNextPage() {
+  if (pageNum >= pdfDoc.numPages) {
+    return;
+  }
+  pageNum++;
+  queueRenderPage(pageNum);
 }
 nextBtnElm.addEventListener('click', onNextPage);
 
 /**
  * Asynchronously downloads PDF.
  */
-pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
   pdfDoc = pdfDoc_;
   pageCountElm.textContent = pdfDoc.numPages;
 
   // Initial/first page rendering
   renderPage(pageNum);
 });
-(function(w, d){
-    function fnContextmenu(e){
-        if(e.target.nodeName == 'CANVAS' || e.target.nodeName == 'DIV'){
-            e.preventDefault();
-            return
-        };
-        var blockContext = [
-            {
-                type: 'id',
-                value: 'mainContainer'
-            }, {
-                type: 'id',
-                value: 'viewer'
-            }, {
-                type: 'id',
-                value: 'toolbarViewer'
-            }, {
-                type: 'class',
-                value: 'canvasWrapper'
-            },{
-                type: 'class',
-                value: 'o-viewer'
-            },{
-                type: 'class',
-                value: 'o-viewer_canvasWrapper'
-            },{
-                type: 'class',
-                value: 'o-viewer_field'
+(function (w, d) {
+  function fnContextmenu(e) {
+    if (e.target.nodeName == 'CANVAS' || e.target.nodeName == 'DIV') {
+      e.preventDefault();
+      return
+    };
+    var blockContext = [
+      {
+        type: 'id',
+        value: 'mainContainer'
+      }, {
+        type: 'id',
+        value: 'viewer'
+      }, {
+        type: 'id',
+        value: 'toolbarViewer'
+      }, {
+        type: 'class',
+        value: 'canvasWrapper'
+      }, {
+        type: 'class',
+        value: 'o-viewer'
+      }, {
+        type: 'class',
+        value: 'o-viewer_canvasWrapper'
+      }, {
+        type: 'class',
+        value: 'o-viewer_field'
+      }
+    ];
+    blockContext.map(elm => {
+      if (elm.type == 'id') {
+        if (d.getElementById(elm.target)) {
+          if (e.target.id == d.getElementById(elm)) e.preventDefault();
+        }
+      }
+      //console.log(e.target.classList, elm.value, e.target.classList.contains(elm.value));
+      if (elm.type == 'class') {
+        if (d.querySelector(`.${elm.value}`)) {
+          [].slice.call(d.querySelectorAll(`.${elm.value}`)).map(c => {
+            if (e.target.classList.contains(elm.value)) {
+              e.preventDefault();
+              return
             }
-        ];
-        blockContext.map(elm => {
-            if(elm.type == 'id') {
-                if(d.getElementById(elm.target)) {
-                    if(e.target.id == d.getElementById(elm)) e.preventDefault();
-                }
-            }
-            //console.log(e.target.classList, elm.value, e.target.classList.contains(elm.value));
-            if(elm.type == 'class'){
-                if(d.querySelector(`.${elm.value}`)) {
-                    [].slice.call(d.querySelectorAll(`.${elm.value}`)).map(c => {
-                        if(e.target.classList.contains(elm.value)) {
-                            e.preventDefault();
-                            return
-                        }
-                    });
-                }
-            };
-        });
-    }
-    //d.body.addEventListener('contextmenu', fnContextmenu, true);
+          });
+        }
+      };
+    });
+  }
+  //d.body.addEventListener('contextmenu', fnContextmenu, true);
 })(window, document);
 
 
@@ -168,3 +169,6 @@ function zoomout() {
   GFG.style.width = currWidth - 40 + "px";
   GFG.style.height = currHeight - 40 + "px";
 }
+
+
+
