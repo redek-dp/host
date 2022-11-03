@@ -4,7 +4,7 @@ self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(cacheName).then(cache => {
       return cache.addAll([
-        `./`,
+        `./off.html`,
         `./icon/36.png`,
         `./icon/72.png`,
         `./icon/144.png`,
@@ -13,7 +13,6 @@ self.addEventListener('install', e => {
         `https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css`,
         `https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css`,
         `https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js`,
-        `./index.html`,
         `./pxw.js`,
         `./manifest.json`,
       ])
