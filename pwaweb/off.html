@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        #main {
+            display: block;
+            margin: 120px auto;
+        }
+
+        .butouver {
+
+            background-color: #008CBA;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .butouver:hover {
+            background-color: #555555;
+        }
+    </style>
+    <script>
+        function refreshPage() {
+            window.location.reload();
+        }
+    </script>
+</head>
+
+<body style="font-family:Open Sans;text-align: center; background-color: rgb(72, 63, 122); color: rgb(238, 234, 234);">
+    <div id="main" style="max-width:200px;
+  height:200px;padding-top:30px;">
+        <p>Sem conexão com a internet. O Wi-Fi ou os dados de rede devem estar ativos.</p>
+        <input class="butouver" type="button" value="Tente novamente" onClick="refreshPage()">
+    </div>
+</body>
+
+</html>

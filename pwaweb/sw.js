@@ -1,8 +1,8 @@
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open('pwa-web').then((cache) => cache.addAll([
-      '/host/pwaweb/',
-      '/host/pwaweb/index.html',
+      '/host/pwaweb/off',
+      '/host/pwaweb/off.html',
       '/host/pwaweb/index.js',
       '/host/pwaweb/icon/36.png',
       '/host/pwaweb/icon/72.png',
