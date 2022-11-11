@@ -46,27 +46,25 @@
 
         <div class="container">
 
-            <div v-for="post, invers in posts , +nuber" :key="invers">
-                <div class="row row-cols-1 row-cols-md-2 g-4">
-                    <div class="col">
-                        <div class="card">
-
-                            <a :href="posts.items[invers].url" target="_parent" class="card mb-3">
-                                <img :src="thum+posts.items[invers].enclosure.url" class="card-img-top">
-                            </a>
-
-                            <div class="card-body">
-                                <h5 class="card-title">{{ posts.items[invers].title }}</h5>
-                                <p class="card-text">{{ posts.items[invers].description }}.</p>
-                                <p class="card-text"><small class="text-muted">{{posts.items[invers].author}}</small>
-                                </p>
-                                <p class="card-text"><small class="text-muted">{{posts.items[invers].url }}</small></p>
-                            </div>
-                        </div>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col" v-for="post, invers in posts , +nuber" :key="invers">
+                  <div class="card">
+          
+                    <a :href="posts.items[invers].url" target="_parent" class="card mb-3">
+                      <img :src="thum+posts.items[invers].enclosure.url" class="card-img-top">
+                    </a>
+          
+                    <div class="card-body">
+                      <h5 class="card-title">{{ posts.items[invers].title }}</h5>
+                      <p class="card-text">{{ posts.items[invers].description }}.</p>
+                      <p class="card-text"><small class="text-muted">{{posts.items[invers].author}}</small>
+                      </p>
+                      <p class="card-text"><small class="text-muted">{{posts.items[invers].url }}</small></p>
                     </div>
-
+                  </div>
                 </div>
-            </div>
+          
+              </div>
 
 
 
@@ -123,30 +121,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js" defer></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+    <script src="./index.js" defer></script>
 
-    <script>
-
-        new Vue({
-            el: "#app",
-            data: {
-                nuber: "25",
-                thum: "https://image.thum.io/get/image/fit/300x300/",
-                posts: []
-            },
-            created() {
-                this.getData();
-            },
-            methods: {
-                getData() {
-                    axios.get("https://rss.app/feeds/GY72k3NLXlP0da2m.json").then((posts) => {
-                        this.posts = posts.data;
-                        console.log(this.posts);
-                    });
-                }
-            }
-        });
-
-    </script>
+    
 
 </body>
 

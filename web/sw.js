@@ -16,6 +16,7 @@ self.addEventListener('install', e => {
         `https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js`,
         `https://unpkg.com/axios/dist/axios.min.js`,
         `https://rss.app/feeds/GY72k3NLXlP0da2m.json`,
+        `./index.js`,
         `./pxw.js`,
         `./manifest.json`,
       ])
