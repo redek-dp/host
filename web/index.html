@@ -35,9 +35,12 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top bg-light">
+    <nav class="navbar sticky-top bg-light rounded">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">app</a>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="">JSON.RSS</a>
         </div>
     </nav>
 
@@ -48,23 +51,23 @@
 
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div class="col" v-for="post, invers in posts , +nuber" :key="invers">
-                  <div class="card">
-          
-                    <a :href="posts.items[invers].url" target="_parent" class="card mb-3">
-                      <img :src="thum+posts.items[invers].enclosure.url" class="card-img-top">
-                    </a>
-          
-                    <div class="card-body">
-                      <h5 class="card-title">{{ posts.items[invers].title }}</h5>
-                      <p class="card-text">{{ posts.items[invers].description }}.</p>
-                      <p class="card-text"><small class="text-muted">{{posts.items[invers].author}}</small>
-                      </p>
-                      <p class="card-text"><small class="text-muted">{{posts.items[invers].url }}</small></p>
+                    <div class="card">
+
+                        <a :href="posts.items[invers].url" target="_parent" class="card mb-3">
+                            <img :src="thum+posts.items[invers].enclosure.url" class="card-img-top">
+                        </a>
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ posts.items[invers].title }}</h5>
+                            <p class="card-text">{{ posts.items[invers].description }}.</p>
+                            <p class="card-text"><small class="text-muted">{{posts.items[invers].author}}</small>
+                            </p>
+                            <p class="card-text"><small class="text-muted">{{posts.items[invers].url }}</small></p>
+                        </div>
                     </div>
-                  </div>
                 </div>
-          
-              </div>
+
+            </div>
 
 
 
@@ -123,7 +126,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
     <script src="./index.js" defer></script>
 
-    
+
 
 </body>
 
