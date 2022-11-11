@@ -9,6 +9,8 @@ if ('serviceWorker' in navigator) {
         console.log('Service Worker Ready');
     });
 }
+
+/*
 var deferredPrompt;
 window.addEventListener('beforeinstallprompt', function (e) {
     console.log('beforeinstallprompt Event fired');
@@ -16,6 +18,8 @@ window.addEventListener('beforeinstallprompt', function (e) {
     deferredPrompt = e;
     return false;
 });
+
+
 btnAddToHomeScreen.addEventListener('click', function () {
     if (deferredPrompt !== undefined) {
         deferredPrompt.prompt();
@@ -30,3 +34,4 @@ btnAddToHomeScreen.addEventListener('click', function () {
         });
     }
 });
+*/
