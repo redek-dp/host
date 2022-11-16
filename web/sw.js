@@ -15,7 +15,7 @@ self.addEventListener('install', e => {
         `https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js`,
         `https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js`,
         `https://unpkg.com/axios/dist/axios.min.js`,
-        `https://rss.app/feeds/GY72k3NLXlP0da2m.json`,
+        `https://dl.dropboxusercontent.com/s/rv8j8yd1cho43sm/instagram-receitas.json`,
         `./index.js`,
         `./pxw.js`,
         `./manifest.json`,
