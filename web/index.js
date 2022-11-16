@@ -10,7 +10,7 @@ new Vue({
     },
     methods: {
         getData() {
-            axios.get("https://rss.app/feeds/GY72k3NLXlP0da2m.json").then((posts) => {
+            axios.get("https://dl.dropboxusercontent.com/s/rv8j8yd1cho43sm/instagram-receitas.json").then((posts) => {
                 this.posts = posts.data;
                 console.log(this.posts);
             });
