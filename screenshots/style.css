@@ -14,22 +14,14 @@ html body {
   background-color: #fff;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 #cbwrap {
-  /*background: rgb(255 255 255 / 46%);*/
-  /* width: 600px; */
-  /*padding: 8px;
-  border-radius: 14px;*/
   position: fixed;
   bottom: 15px;
   right: 15px;
-  /*font-family: arial, sans-serif;*/
+  z-index: 99999;
 }
 
-/* (X2) FORM COSMETICS */
+
 button {
   color: #ffffffcf;
     background: #1a37799e;
@@ -37,11 +29,15 @@ button {
     padding-top: 3px;
     cursor: pointer;
     border-radius: 14px;
-    /* font-weight: 700; */
     width: 45px;
     height: 45px;
 }
 
-.bi-fullscreen{
-  /*padding: 2px 0px;*/
+.urlsk{
+  
+  position: fixed;
+  bottom: 70px;
+  right: 15px;
+  z-index: 99999;
+  
 }
