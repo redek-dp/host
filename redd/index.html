@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Native</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        .andapp {
+            padding: 10px;
+            background-color: rgb(118, 41, 190);
+            color: #e2dcdc;
+
+        }
+
+        .mider {
+            padding-top: 30px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="mider" id="contai"></div>
+
+    <script>
+
+        link = document.location.href;
+        //link = 'https://davidsonbpe.blogspot.com/?=ola mundo';
+        var urlql = (link.split('?=').pop());
+        document.getElementById("contai").innerHTML = '<a class="andapp" href="' + urlql + '" target="_blank" rel="noopener noreferrer">' + urlql + '</a> ';
+
+    </script>
+
+</body>
+
+</html>
